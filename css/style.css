@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+body {
+  font-size: 16px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  color: #ce9797;
+  max-width: 1440px;
+  margin: 0 auto; }
+  @media (min-width: 375.1px) {
+    body {
+      background: url(../images/bg-pattern-desktop.svg); } }
+
+main {
+  display: flex;
+  margin: 0 auto 2em auto;
+  flex-direction: column; }
+  @media (max-width: 375.1px) {
+    main .hero-desktop {
+      display: none; }
+    main h1 {
+      padding: 2em; } }
+  @media (min-width: 375.1px) {
+    main {
+      flex-wrap: wrap;
+      height: 49em;
+      align-items: flex-end; }
+      main h1 {
+        order: 1;
+        width: 23em;
+        margin: auto;
+        padding: 3em; }
+      main .hero-mobile {
+        display: none; }
+      main .hero-desktop {
+        order: 3; } }
+
+.form {
+  padding: 2.5em;
+  text-align: center; }
+  .form .titulo-mensagem {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    color: #ce9797;
+    font-size: 3em; }
+    .form .titulo-mensagem strong {
+      font-size: 16px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 400;
+      color: #ce9797;
+      color: #413a3a;
+      font-size: 1em; }
+  .form p {
+    font-size: .85em;
+    margin: 2em auto;
+    line-height: 2em; }
+  .form .email {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; }
+    .form .email input, .form .email button {
+      border-radius: 50px;
+      font-size: 16px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 300;
+      color: #ce9797;
+      border: 1px solid #ce9797; }
+      .form .email input::-webkit-input-placeholder, .form .email button::-webkit-input-placeholder {
+        color: #ce9797; }
+      .form .email input:-moz-placeholder, .form .email button:-moz-placeholder {
+        color: #ce9797; }
+      .form .email input::-moz-placeholder, .form .email button::-moz-placeholder {
+        color: #ce9797; }
+      .form .email input:-ms-input-placeholder, .form .email button:-ms-input-placeholder {
+        color: #ce9797; }
+    .form .email input {
+      position: absolute;
+      width: inherit;
+      padding: 1em;
+      color: #413a3a; }
+    .form .email .error-icon {
+      z-index: 11;
+      margin: 0 1em; }
+    .form .email button {
+      z-index: 10;
+      font-size: 3em;
+      width: 1.3em;
+      padding: 0;
+      background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+      transition: 1s transform; }
+      .form .email button::after {
+        content: url(../images/icon-arrow.svg); }
+      .form .email button:hover {
+        background: #f8bfbf;
+        transform: scale(1.05);
+        box-shadow: 10px 10px 16px #ce9797;
+        transition: 1s transform; }
+  .form .erro {
+    padding: 0;
+    margin: 0;
+    color: #f96262; }
+  @media (min-width: 375.1px) {
+    .form {
+      order: 2;
+      width: 27em;
+      padding: 7em;
+      margin: auto;
+      text-align: justify; }
+      .form h2 {
+        font-size: 4em !important;
+        letter-spacing: .3em; }
+      .form p {
+        font-size: 16px; }
+      .form .email {
+        width: 28em; }
+      .form button {
+        width: 2em !important; } }
+
+.attribution {
+  font-size: 11px;
+  text-align: center; }
+
+.attribution a {
+  color: #3e52a3; }
+
+/*# sourceMappingURL=style.css.map */

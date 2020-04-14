@@ -3,31 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Base Apparel coming soon page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  We're coming soon
-
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
-
-  Email Address
-  
+  <main>
+    <h1><img src="images/logo.svg" alt="logo"></h1>
+    <img src="images/hero-mobile.jpg" alt="hero-mobile" class="hero-mobile">
+    <img src="images/hero-desktop.jpg" alt="hero-desktop" class="hero-desktop">
+    <form action="enviar" class="form">
+      <h2 class="titulo-mensagem">We're <strong>coming soon</strong></h2>
+      <p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+      <div class="email">
+        <input id="email" type="email" placeholder="Email Address" required name="email" title="email@email.com">
+        <img src="images/icon-error.svg" alt="" class="error-icon" style="display: none;">
+        <button type="submit"></button>
+      </div>
+      <p class="erro"></p>
+    </form>
+  </main>
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://renatobmps.github.io/curriculo/">Renato Brandão</a>.
     </p>
   </footer>
+  <script src="js/email.js"></script>
 </body>
 </html>

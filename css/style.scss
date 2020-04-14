@@ -1,0 +1,166 @@
+//imports
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+//variaveis
+$mobile: 375.1px;
+$desktop: 1440px;
+$bp-mobile: "(max-width: #{$mobile})";
+$bp-desktop: "(min-width: #{$mobile})";
+
+$color-primary-desaturated-red: hsl(0, 36%, 70%);
+$color-primary-soft-red: hsl(0, 93%, 68%);
+$color-neutral-dark-grayish-red: hsl(0, 6%, 24%);
+
+$color-gradient-first: hsl(0, 0%, 100%);
+$color-gradient-second: hsl(0, 100%, 98%);
+$color-gradient-third: hsl(0, 80%, 86%);
+$color-gradient-fourth: hsl(0, 74%, 74%);
+
+@mixin colorGradientLinear ($firstColor, $secondColor, $deg: 135deg) {
+    background: linear-gradient($deg, $firstColor, $secondColor);
+}
+@mixin fontePadrao ($weight: 300) {
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: $weight;
+    color: $color-primary-desaturated-red;
+}
+@mixin corInput ($cor: $color-primary-desaturated-red) {
+    border: 1px solid $cor;
+    
+    &::-webkit-input-placeholder {
+        color: $cor;
+    }
+    &:-moz-placeholder {
+        color: $cor;  
+    }
+    &::-moz-placeholder {
+        color: $cor;  
+    }
+    &:-ms-input-placeholder {  
+        color: $cor;  
+    }
+}
+body{
+    @include fontePadrao(400);
+    max-width: $desktop;
+    margin: 0 auto;
+    @media #{$bp-desktop} {
+        background: url(../images/bg-pattern-desktop.svg);
+    }
+}
+main{
+    display: flex;
+    margin: 0 auto 2em auto;
+    flex-direction: column;
+    @media #{$bp-mobile} {
+        .hero-desktop{
+            display: none;
+        }
+        h1{
+            padding: 2em;
+        }
+    }
+    @media (min-width: #{$mobile}){
+        flex-wrap: wrap;
+        height: 49em;
+        align-items: flex-end;
+        h1{
+            order: 1;
+            width: 23em;
+            margin: auto;
+            padding: 3em;
+        }
+        .hero-mobile{
+            display: none;
+        }
+        .hero-desktop{
+            order: 3;
+        }
+    }
+}
+.form{
+    padding: 2.5em;
+    text-align: center;
+    .titulo-mensagem{
+        text-transform: uppercase;
+        @include fontePadrao();
+        font-size: 3em;
+        strong{
+            @include fontePadrao(400);
+            color: $color-neutral-dark-grayish-red;
+            font-size: 1em;
+        }
+    }
+    p{
+        font-size: .85em;
+        margin: 2em auto;
+        line-height: 2em;
+    }
+    .email{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        input, button{
+            border-radius: 50px;
+            @include fontePadrao();
+            @include corInput();
+        }
+        input{
+            position: absolute;
+            width: inherit;
+            padding: 1em;
+            color: $color-neutral-dark-grayish-red;
+        }
+        .error-icon{
+            z-index: 11;
+            margin: 0 1em;
+        }
+        button{
+            z-index: 10;
+            font-size: 3em;
+            width: 1.3em;
+            padding: 0;
+            @include colorGradientLinear($color-gradient-third, $color-gradient-fourth);
+            transition: 1s transform;
+            &::after{
+                content: url(../images/icon-arrow.svg);
+            }
+            &:hover{
+                background: $color-gradient-third;
+                transform: scale(1.05);
+                box-shadow: 10px 10px 16px $color-primary-desaturated-red;
+                transition: 1s transform;
+            }
+        }
+    }
+    .erro{
+        padding: 0;
+        margin: 0;
+        color: $color-primary-soft-red;
+    }
+    @media #{$bp-desktop} {
+        order: 2;
+        width: 27em;
+        padding: 7em;
+        margin: auto;
+        text-align: justify;
+        h2{
+            font-size: 4em !important;
+            letter-spacing: .3em;
+        }
+        p{
+            font-size: 16px;
+        }
+        .email{
+            width: 28em;
+        }
+        button{
+            width: 2em !important;
+        }
+    }
+}
+
+//footer
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
